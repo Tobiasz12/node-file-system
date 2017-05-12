@@ -2,6 +2,10 @@ var fs = require('fs');
 
 function indexDirectory(directory) {
 	fs.readdir(directory, function(err, files) {
+		if (err) {
+			return console.error(err);
+	   	}
+	   	
 		files.forEach(function (files) {
 			console.log(files);   
 		});
